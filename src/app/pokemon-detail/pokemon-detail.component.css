@@ -1,0 +1,25 @@
+.pokemon-card {
+    border-radius: 20px;
+    background-color: #777;
+    padding: 20px;
+    width: 200px;
+    height: fit-content;
+    margin: 5px;
+}
+
+.pokemon-card:hover {
+    background-color: #999;
+    cursor: pointer;
+}
+
+.pokemon-card:hover .pokemon-name {
+    background-color: #f5f5f5;
+    color: darkred;
+}
+
+.pokemon-name {
+    background-color: darkred;
+    font-size: 28px;
+    box-shadow: 5px 5px 10px #555;
+    border-radius: 15px;
+}

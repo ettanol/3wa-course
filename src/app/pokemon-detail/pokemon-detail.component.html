@@ -1,0 +1,21 @@
+<div class="pokemon-card" *ngIf="pokemon; else pokemonNull">
+    <h1>{{pokemon.name | titlecase }}</h1>
+    <img src={{pokemon.picture}} attr.aria-label={{pokemon.name}} alt="{{ pokemon.name }} in the wild grass" class="pokemon-img">
+    <button type="button" (click)="addToTeam()">Add to Team</button>
+    <button type="button" (click)="openUpdateForm()">Update</button>
+    <button type="button" (click)="deletePokemon()">Delete</button>
+    <form *ngIf="isUpdateFormOpen" [formGroup]="form" (ngSubmit)="updatePokemonInfo(pokemon)">
+        <label for="hp">Hp :</label>
+        <input type="number" class="pokemon-hp" placeholder={{pokemon.hp}} name="hp" formControlName="hp"/>
+        <label for="cp">Cp :</label>
+        <input type="number" class="pokemon-cp" placeholder={{pokemon.cp}} name="cp"formControlName="cp" />
+        <label for="description">Description</label>
+        <input type="text" class="pokemon-description" placeholder={{pokemon.description}} name="description" formControlName="description" />
+        <button type="submit">Update Info</button>
+    </form>
+    <!-- <button type="button">Add To Favorites</button> -->
+</div>
+<ng-template #pokemonNull>
+    <p>Le pokémon recherché n'existe pas !</p>
+</ng-template>
+<button (click)="back()">Go Back</button>

@@ -1,0 +1,37 @@
+<h1>{{title}}</h1>
+<div 
+*ngIf="pokemons"
+class="pokemon-cards">
+    <ul *ngFor="let pokemon of pokemons" class="pokemon-card" appBorderCard>
+        <a class="pokemon-detail-link" routerLink="/pokemon-detail/{{pokemon.id}}" (click)="onSelect(pokemon)">
+            <h2 class="pokemon-name">{{pokemon.name | titlecase }}</h2>
+            <p class="pokemon-hp">{{pokemon.hp}} HP</p>
+            <img src={{pokemon.picture}} attr.aria-label={{pokemon.name}} alt="{{ pokemon.name }} in the wild grass" class="pokemon-img">
+            <div class="pokemon-types">
+                <ul *ngFor="let type of pokemon.types">
+                    <li class="pokemon-type {{type.toLowerCase() | pokemonTagColor}}" attr.aria-label={{type}}>{{type}}</li>
+                </ul>
+            </div>
+        </a>
+    </ul>
+</div>
+<button type="button" (click)="openAddAPokemon()">Add A Pokemon</button>
+<div class="pokemon-add" *ngIf="isAddAPokemonOpen">
+    <form [formGroup]="form" (ngSubmit)="AddPokemon()">
+        <label for="id">Numéro: <input type="number" name="id" id="id" formControlName="id"></label>
+        <label for="name">Name :<input type="text" name="name" id="name" formControlName="name"></label>
+        <label for="hp">Hp :<input type="number" name="hp" id="hp" formControlName="hp"></label>
+        <label for="cp">Cp :<input type="text" name="cp" id="cp" formControlName="cp"></label>
+        <label for="type1">First Type :<input type="text" name="type1" id="type1" formControlName="type1"></label>
+        <label for="type2">Second Type :<input type="text" name="type2" id="type2" formControlName="type2"></label>
+        <label for="description">Description :<input type="text" name="description" id="description" formControlName="description"></label>
+        <button type="submit">Add</button>
+    </form>
+</div>
+<div class="pagination">
+    <select type="number" name="page"  id="page" (change)="changePage($event)">
+        <option *ngFor="let page of maxOfPagesArray" value={{page}}>{{page}}</option>
+    </select>
+</div>
+
+<!-- <app-pokemon-detail [pokemon]="selectedPokemon"></app-pokemon-detail> -->

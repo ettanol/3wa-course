@@ -1,0 +1,14 @@
+<form (keyup)="onChange($event)">
+    <input type="text" placeholder="Recherche..." name="search">
+</form>
+
+<form>
+    <fieldset>
+        <legend>Filter</legend>
+        <select name="type" id="type" (change)="changeFilterType($event)" >
+            <option value="">--Select a Type--</option>
+            <option type='text' *ngFor='let enum of typeEnum | keyvalue'value={{enum.value}}>{{enum.value}}</option>
+            <!-- <option *ngFor="let type of types" value={{type}}>{{type}}</option> -->
+        </select>
+    </fieldset>
+</form>

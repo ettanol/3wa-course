@@ -1,0 +1,10 @@
+<header class="home">
+    <h1 class="title">{{title}}</h1>
+    <p class="slogan">{{slogan}}</p>
+</header>
+
+<!-- <app-form></app-form> -->
+
+<app-filter (search)="filter($event)" (filterType)="selectType($event)"></app-filter>
+
+<app-list [search]="searchString" [type]="typeString"></app-list>
