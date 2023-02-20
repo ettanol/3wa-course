@@ -178,6 +178,19 @@
       "types": [
         "Bug"
       ]
+    },
+    {
+      "id": 151,
+      "name": "sdfdsf",
+      "hp": 7,
+      "cp": "142",
+      "picture": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/151.png",
+      "type1": "Bug",
+      "type2": "",
+      "description": "dfdsdfsd",
+      "types": [
+        "Bug"
+      ]
     }
   ]
 }

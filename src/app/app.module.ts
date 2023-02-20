@@ -15,6 +15,7 @@ import { BorderCardDirective } from './border-card.directive';
 import { PokemonCardComponent } from './pokemon-card/pokemon-card.component';
 import { FormComponent } from './form/form.component';
 import { PaginationPipe } from './pagination.pipe';
+import { TeamComponent } from './team/team.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { PaginationPipe } from './pagination.pipe';
     PokemonCardComponent,
     FormComponent,
     PaginationPipe,
+    TeamComponent,
   ],
   imports: [
     BrowserModule,
